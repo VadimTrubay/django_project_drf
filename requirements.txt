@@ -1,0 +1,5 @@
+Django==5.0.1
+django-environ==0.10.0
+django_cloudinary_storage==0.3.0
+cloudinary==1.38.0
+pillow==10.2.0
