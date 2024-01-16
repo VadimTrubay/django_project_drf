@@ -7,4 +7,4 @@ class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='user')
 
     def __str__(self):
-        return f"{self.comment}"
+        return self.comment
