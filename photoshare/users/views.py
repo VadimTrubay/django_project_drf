@@ -1,24 +1,15 @@
-from rest_framework import generics
+from rest_framework import generics, viewsets
 
 from django.contrib.auth.models import User
 from .models import Profile
 from .serializers import *
 
 
-# class UserEditApiView(generics.RetrieveAPIView):
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
-
-class ProfileApiView(generics.RetrieveAPIView):
-    queryset = Profile.objects.all()
-    serializer_class = ProfileSerializer
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 
-class ProfileEditApiView(generics.UpdateAPIView):
-    queryset = Profile.objects.all()
-    serializer_class = ProfileSerializer
-
-
-class ProfileDeleteApiView(generics.DestroyAPIView):
+class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer

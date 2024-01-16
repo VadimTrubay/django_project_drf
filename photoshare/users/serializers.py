@@ -8,7 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class ProfileSerializer(serializers.ModelSerializer):
-    user = serializers.StringRelatedField()
+    # user = serializers.StringRelatedField()
 
     class Meta:
         model = Profile
