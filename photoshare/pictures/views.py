@@ -1,5 +1,6 @@
 from rest_framework import generics, viewsets
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 
 from .models import Image
@@ -12,6 +13,7 @@ from tags.models import Tag # noqa
 class ImageViewSet(viewsets.ModelViewSet):
     # queryset = Image.objects.all() # noqa
     serializer_class = ImageSerializer
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def get_queryset(self):
         pk = self.kwargs.get('pk')

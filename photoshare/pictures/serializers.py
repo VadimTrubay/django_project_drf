@@ -3,6 +3,8 @@ from .models import Image
 
 
 class ImageSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     # tags = serializers.StringRelatedField(many=True)
     # comment = serializers.StringRelatedField()
     # user = serializers.StringRelatedField()
