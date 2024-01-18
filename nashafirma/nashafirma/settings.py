@@ -190,6 +190,16 @@ SIMPLE_JWT = {
 
 SITE_ID = 1
 
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = env('GMAIL_HOST')
+# EMAIL_HOST_USER = env('GMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = env('GMAIL_HOST_PASSWORD')
+# EMAIL_PORT = env('GMAIL_PORT')
 
-
+EMAIL_SERVER = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'user0606user@gmail.com'
+EMAIL_HOST_PASSWORD = 'jezyscoekirdwblv'
+EMAIL_ADMIN = 'user0606user@gmail.com'
 
