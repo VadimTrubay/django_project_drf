@@ -1,17 +1,11 @@
-from django.urls import path, include
-from rest_framework import routers
+from django.urls import path
 
 from .views import *
 
-routers_order = routers.DefaultRouter()
-routers_order.register(r'order', OrderViewSet, basename='order')
-
-routers_items = routers.DefaultRouter()
-routers_items.register(r'item', ItemsViewSet, basename='item')
-
 urlpatterns = [
-    path('', AllOrdersViewSet.as_view()),
-    path('', include(routers_order.urls)),
-    path('', AllItemsViewSet.as_view()),
-    path('', include(routers_items.urls)),
+    path('all/', AllOrdersViewSet.as_view()),
+    path('add/', AddOrderViewSet.as_view()),
+    path('view/<int:pk>/', ViewOrderViewSet.as_view()),
+    path('edit/<int:pk>/', EditOrderViewSet.as_view()),
+    path('delete/<int:pk>/', DeleteOrderViewSet.as_view()),
 ]

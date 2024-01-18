@@ -3,11 +3,11 @@ from rest_framework import routers
 
 from .views import *
 
-routers_product = routers.DefaultRouter()
-routers_product.register(r'product', ProductViewSet, basename='product')
-
 
 urlpatterns = [
-    path('', AllProductsViewSet.as_view()),
-    path('', include(routers_product.urls)),
+    path('all/', AllProductsViewSet.as_view()),
+    path('add/', AddProductViewSet.as_view()),
+    path('view/<int:pk>/', ViewProductViewSet.as_view()),
+    path('edit/<int:pk>/', EditProductViewSet.as_view()),
+    path('delete/<int:pk>/', DeleteProductViewSet.as_view()),
 ]

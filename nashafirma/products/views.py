@@ -1,7 +1,5 @@
-from rest_framework import generics, viewsets
-from rest_framework.decorators import action
+from rest_framework import generics
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
-from rest_framework.response import Response
 
 from .serializers import *
 
@@ -11,18 +9,25 @@ class AllProductsViewSet(generics.ListAPIView):
     serializer_class = AllProductsSerializer
 
 
-class ProductViewSet(viewsets.ModelViewSet):
+class AddProductViewSet(generics.CreateAPIView):
     queryset = Product.objects.all()
-    serializer_class = ProductSerializer
-    # permission_classes = [IsAuthenticated]
+    serializer_class = AddProductSerializer
+    permission_classes = [IsAdminUser]
 
-    def get_queryset(self):
-        pk = self.kwargs.get('pk')
-        if not pk:
-            return Product.objects.all()
-        return Product.objects.filter(pk=pk)
 
-    @action(methods=['get'], detail=True)
-    def product(self, request, pk=None):
-        prod = Product.objects.get(pk=pk)
-        return Response({'product': prod.product})
+class ViewProductViewSet(generics.RetrieveAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ViewProductSerializer
+    permission_classes = [IsAdminUser]
+
+
+class EditProductViewSet(generics.UpdateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = EditProductSerializer
+    permission_classes = [IsAdminUser]
+
+
+class DeleteProductViewSet(generics.DestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = DeleteProductSerializer
+    permission_classes = [IsAdminUser]
