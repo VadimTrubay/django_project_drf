@@ -122,7 +122,8 @@ LOGIN_REDIRECT_URL = '/api/products/'
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'  # or SMTP(https://www.youtube.com/watch?v=9RTZP16rvkQ&t=675s)
+# or SMTP(https://www.youtube.com/watch?v=9RTZP16rvkQ&t=675s)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 STATIC_URL = "/static/"
@@ -205,4 +206,3 @@ EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'user0606user@gmail.com'
 EMAIL_HOST_PASSWORD = 'jezyscoekirdwblv'
 EMAIL_ADMIN = 'user0606user@gmail.com'
-
