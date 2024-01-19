@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 
+from .yasg import urlpatterns as doc_urls  #doc swagger
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
@@ -11,3 +13,5 @@ urlpatterns = [
     path('api/items/', include('items.urls')),
     path('api/products/', include('products.urls')),
 ]
+
+urlpatterns += doc_urls

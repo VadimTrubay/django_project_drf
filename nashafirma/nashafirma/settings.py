@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'admin_totals',
     'djoser',
     'rest_framework.authtoken',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -133,8 +134,8 @@ STATICFILES_DIRS = (BASE_DIR / "static",)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    # 'PAGE_SIZE': 2,
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 2,
 
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
@@ -196,6 +197,8 @@ SITE_ID = 1
 # EMAIL_HOST_PASSWORD = env('GMAIL_HOST_PASSWORD')
 # EMAIL_PORT = env('GMAIL_PORT')
 
+
+EMAIL_USE_TLS = True
 EMAIL_SERVER = 'smtp.gmail.com'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'

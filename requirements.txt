@@ -5,3 +5,4 @@ djangorestframework==3.14.0
 django-allauth==0.60.1.
 admin-totals==1.0.1
 djoser==2.2.2
+drf_yasg==1.21.7

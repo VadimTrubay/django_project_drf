@@ -2,11 +2,13 @@ from rest_framework import generics
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 
 from .serializers import *
+from orders.service import PaginationProducts
 
 
 class AllProductsViewSet(generics.ListAPIView):
     queryset = Product.objects.all()
     serializer_class = AllProductsSerializer
+    pagination_class = PaginationProducts
 
 
 class AddProductViewSet(generics.CreateAPIView):
