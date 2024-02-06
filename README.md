@@ -44,9 +44,6 @@
 - Python
 - Django
 - PostgreSQL
-- Bootstrap
-- HTML5
-- CSS3
 - GitHub
 
 - Author - https://github.com/VadimTrubay/django_project_drf_nashafirma
