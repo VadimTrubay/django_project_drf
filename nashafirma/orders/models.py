@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 
-
 class Order(models.Model):
     created_at = models.DateField(auto_now_add=True, verbose_name='створено')
     user = models.ForeignKey(get_user_model(), blank=True, on_delete=models.CASCADE, verbose_name='користувач')
@@ -22,4 +21,3 @@ class Order(models.Model):
         verbose_name = 'замовлення'
         verbose_name_plural = 'замовлення'
         ordering = ['created_at', '-done']
-
